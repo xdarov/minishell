@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcorina <pcorina@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: pcorina <pcorina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 21:28:50 by pcorina           #+#    #+#             */
-/*   Updated: 2021/10/20 21:28:51 by pcorina          ###   ########lyon.fr   */
+/*   Updated: 2022/04/13 17:33:41 by pcorina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	size_str(char *s, char c)
 	return (i);
 }
 
-void	*error(char **text, int i)
+static void	*error(char **text, int i)
 {
 	int	j;
 

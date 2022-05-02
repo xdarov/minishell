@@ -1,52 +1,43 @@
-NAME =				philo
+NAME =				minishell
 
-NAME_B =			philo_bonus
-
-SRCS =				philo.c philo_utils.c philo_main.c
-
-SRCS_B = 			philo_bonus.c philo_utils_bonus.c philo_main_bonus.c
-
-LIB_PATH =			libft/
-
+SRCS =				minishell.c ms_cd.c ms_echo.c ms_env.c ms_unset.c ms_export.c ms_export2.c		\
+					w_main.c ms_var.c ms_handler.c ms_exit.c ms_mini.c ms_pars.c ms_pars_fillcom.c	\
+					ms_pars_formcom.c ms_pars_utils.c ms_pars_redir.c w_getcmd.c w_runcmd.c
+		
 OBJ_DIR =			obj
 
-HEADER =			philo.h
-
-HEADER_B =			philo_bonus.h
+LIB_PATH = 			libft/
+				
+HEADER =			minishell.h
 
 OBJ =				$(addprefix $(OBJ_DIR)/, $(patsubst %.c, %.o, $(SRCS)))
 
-OBJ_B =				$(addprefix $(OBJ_DIR)/, $(patsubst %.c, %.o, $(SRCS_B)))
-
 CC =				gcc
 
-FLAGS =				-g -Wall -Wextra -Werror
+FLAGS =				-g -Wall -Wextra -Werror -I$(HEADER) 
 
-.PHONY:				all bonus makelibft clean fclean re
+FLAGS_RL =			-I /Users/$(USER)/.brew/opt/readline/include -lreadline
 
-all:				makelibft $(NAME) $(NAME_B)
+.PHONY:				all clean makelibft fclean re
+
+all:				makelibft $(NAME)
 
 makelibft:			
 					@make -C $(LIB_PATH) all
 
 $(NAME):			$(HEADER) $(OBJ)
-					$(CC) $(FLAGS) -I$(HEADER) $(OBJ) $(LIB_PATH)libft.a -o $(NAME)
-
-bonus:				makelibft $(NAME_B)
-
-$(NAME_B):			$(HEADER_B) $(OBJ_B)
-					$(CC) $(FLAGS) -I$(HEADER_B) $(OBJ_B) $(LIB_PATH)libft.a -o $(NAME_B)
+					$(CC) $(FLAGS) $(FLAGS_RL) $(OBJ) $(LIB_PATH)libft.a -o $(NAME)
 
 $(OBJ_DIR)/%.o:		%.c	$(HEADER)
 					@mkdir -p $(OBJ_DIR)
-					$(CC) -g -c $< -o $@
+					$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 					@rm -rf $(OBJ_DIR)
 					@make -C $(LIB_PATH) clean
 
 fclean:				clean
-					@rm -f $(NAME) $(NAME_B)
+					@$(RM) $(NAME)
 					@make -C $(LIB_PATH) fclean
 
 re:					fclean all

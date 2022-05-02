@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcorina <pcorina@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: pcorina <pcorina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 21:29:14 by pcorina           #+#    #+#             */
-/*   Updated: 2021/10/21 18:55:37 by pcorina          ###   ########.fr       */
+/*   Updated: 2022/04/11 19:47:09 by pcorina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 
+	if (!src)
+		return (0);
 	i = 0;
 	if (dstsize > 0)
 	{

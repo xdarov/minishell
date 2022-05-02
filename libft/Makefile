@@ -34,7 +34,7 @@ CFLAGS =			-Wall -Wextra -Werror -I$(HEADER)
 
 all:				$(NAME)
 
-$(NAME):			$(OBJ) $(HEADER)
+$(NAME):			$(OBJ) $(OBJ_B) $(HEADER)
 					ar rcs $(NAME) $?
 
 

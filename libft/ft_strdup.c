@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcorina <pcorina@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: pcorina <pcorina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 21:28:59 by pcorina           #+#    #+#             */
-/*   Updated: 2021/10/20 21:29:00 by pcorina          ###   ########lyon.fr   */
+/*   Updated: 2022/04/13 16:32:31 by pcorina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strdup(const char *s1)
 	size_t	i;
 	char	*str;
 
+	if (!s1)
+		return (NULL);
 	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
 	if (!str)
 		return ((void *)0);

@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ms_env.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcorina <pcorina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/20 21:28:25 by pcorina           #+#    #+#             */
-/*   Updated: 2022/04/25 11:57:37 by pcorina          ###   ########.fr       */
+/*   Created: 2022/04/28 17:08:16 by pcorina           #+#    #+#             */
+/*   Updated: 2022/04/28 17:08:17 by pcorina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "minishell.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void	c_env(t_ms *ms, t_cmd *cmd)
 {
-	int	i;
+	t_list	*buf;
 
-	if (!s)
-		return ;
-	write(fd, s, ft_strlen(s));
-	write(fd, "\n", 1);
+	buf = ms->var;
+	while (buf)
+	{
+		if (buf->vision == 1)
+		{
+			ft_putstr_fd((char *)buf->content, cmd->fd[1]);
+			ft_putstr_fd("\n", cmd->fd[1]);
+		}
+		buf = buf->next;
+	}
 }

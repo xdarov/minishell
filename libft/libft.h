@@ -6,7 +6,7 @@
 /*   By: pcorina <pcorina@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 21:29:54 by pcorina           #+#    #+#             */
-/*   Updated: 2022/01/30 13:23:15 by pcorina          ###   ########.fr       */
+/*   Updated: 2022/04/03 22:23:04 by pcorina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 typedef struct s_list
 {
 	void			*content;
+	int				vision;
 	struct s_list	*next;
 }	t_list;
 
