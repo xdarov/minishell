@@ -6,7 +6,7 @@
 /*   By: pcorina <pcorina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 09:52:42 by sdarr             #+#    #+#             */
-/*   Updated: 2022/04/29 17:06:55 by pcorina          ###   ########.fr       */
+/*   Updated: 2022/09/11 14:01:34 by pcorina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 void	ms_handler(int sig)
 {
-	if (sig)
-		;
+	(void)sig;
 	rl_on_new_line();
 	rl_redisplay();
 	ft_putstr_fd("  \n", 1);

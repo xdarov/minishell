@@ -14,9 +14,7 @@ OBJ =				$(addprefix $(OBJ_DIR)/, $(patsubst %.c, %.o, $(SRCS)))
 
 CC =				gcc
 
-FLAGS =				-g -Wall -Wextra -Werror -I$(HEADER) 
-
-FLAGS_RL =			-I /Users/$(USER)/.brew/opt/readline/include -lreadline
+FLAGS =				-g -Wall -Wextra -Werror -lreadline
 
 .PHONY:				all clean makelibft fclean re
 
@@ -26,7 +24,7 @@ makelibft:
 					@make -C $(LIB_PATH) all
 
 $(NAME):			$(HEADER) $(OBJ)
-					$(CC) $(FLAGS) $(FLAGS_RL) $(OBJ) $(LIB_PATH)libft.a -o $(NAME)
+					$(CC) $(FLAGS) $(OBJ) $(LIB_PATH)libft.a -o $(NAME)
 
 $(OBJ_DIR)/%.o:		%.c	$(HEADER)
 					@mkdir -p $(OBJ_DIR)

@@ -6,7 +6,7 @@
 /*   By: pcorina <pcorina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 16:38:24 by pcorina           #+#    #+#             */
-/*   Updated: 2022/05/02 20:38:43 by pcorina          ###   ########.fr       */
+/*   Updated: 2022/09/11 14:00:11 by pcorina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,8 @@ int	main(int argc, char **argv, char **env)
 {
 	t_ms				ms;
 
-	if (argv || argc)
-		;
+	(void)argc;
+	(void)argv;
 	init_var_sig(env, &ms);
 	while (ms.ex)
 	{

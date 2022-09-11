@@ -6,7 +6,7 @@
 /*   By: pcorina <pcorina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 18:33:57 by pcorina           #+#    #+#             */
-/*   Updated: 2022/04/29 16:55:24 by pcorina          ###   ########.fr       */
+/*   Updated: 2022/09/11 14:02:37 by pcorina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ int	validation(t_ms *ms)
 	t_list	*temp;
 	char	*c;
 	char	*c_next;
-	int		i;
 
 	temp = ms->com;
 	while (temp)
@@ -52,7 +51,6 @@ int	validation(t_ms *ms)
 			c_next = temp->next->content;
 		else
 			c_next = NULL;
-		i = -1;
 		c = temp->content;
 		if (*c == '|' && (c[1] != '\0' || temp == ms->com || !c_next))
 			return (pars_error(2, ms, NULL));
